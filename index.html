@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav a:hover, .nav a:focus {
+            background-color: #f0f0f0;
+            outline: none;
+        }
+
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1584961712416-2e9180874a72?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            height: 100vh;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .search-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .search-form input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .search-form button {
+            background-color: #333;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-form button:hover, .search-form button:focus {
+            background-color: #555;
+            outline: none;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <h1>Welcome to Our Clothing Store</h1>
+        <p>Find your perfect clothing here</p>
+        <div class="search-container">
+            <form class="search-form" action="/search" method="GET">
+                <input type="text" id="search-input" name="search" placeholder="Search for products...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </main>
+
+    <section class="category-grid">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200" alt="Product 1" class="product-image">
+            <h2>Shirts</h2>
+            <p>Find stylish shirts for men, women, and kids</p>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200" alt="Product 2" class="product-image">
+            <h2>Pants</h2>
+            <p>Find casual pants in different styles and colors</p>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200" alt="Product 3" class="product-image">
+            <h2>Shoes</h2>
+            <p>Find footwear of all kinds and styles</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2023 Clothing Store. All rights reserved.</p>
+        <nav>
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="#">Contact Us</a>
+        </nav>
+    </footer>
+
+    <script>
+        // Add your JavaScript here
+        // For example, you can add smooth scrolling to navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
